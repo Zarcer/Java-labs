@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-group = 'lab_1'
+group = 'lab_3'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -17,7 +17,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'lab_1.SpiderMain'
+    mainClass = 'lab_3.SpiderMain'
 }
 
 test {

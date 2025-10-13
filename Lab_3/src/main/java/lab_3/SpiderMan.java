@@ -1,4 +1,4 @@
-package lab_1;
+package lab_3;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
