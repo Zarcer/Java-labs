@@ -41,7 +41,6 @@ public class SpiderMan {
                         }
                     });
                 }
-
                 void fetchAndProcess(String path) {
                     URI uri = URI.create(baseUrl + path);
                     HttpRequest request = HttpRequest.newBuilder().uri(uri).timeout(Duration.ofSeconds(20)).GET().build();
