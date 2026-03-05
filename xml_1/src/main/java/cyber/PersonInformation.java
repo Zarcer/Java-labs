@@ -3,20 +3,23 @@ package cyber;
 import java.util.ArrayList;
 
 public class PersonInformation {
-    IdName personIdName;
-    String firstname;
-    String lastname;
-    IdName motherIdName;
-    IdName fatherIdName;
+    IdName personIdName = new IdName();
+    String firstname=null;
+    String lastname=null;
+    IdName motherIdName = new IdName();
+    IdName fatherIdName = new IdName();
     String gender;
-    IdName wifeIdName;
-    IdName husbandIdName;
+    IdName wifeIdName = new IdName();
+    IdName husbandIdName = new IdName();
     int siblingsNumber;
     ArrayList<IdName> brothers =new ArrayList<>();
     ArrayList<IdName> sisters =new ArrayList<>();
     int childrenNumber;
     ArrayList<IdName> daughters =new ArrayList<>();
     ArrayList<IdName> sons =new ArrayList<>();
+    public PersonInformation(String key){
+        personIdName.id=key;
+    }
 }
 
 class IdName{
