@@ -96,6 +96,7 @@ public class Parser {
         for(Map.Entry<String, PersonInformation> entry : personData.entrySet()){
             nameToId.put(entry.getValue().personIdName.name, entry.getKey());
         }
+
     }
 
 }
