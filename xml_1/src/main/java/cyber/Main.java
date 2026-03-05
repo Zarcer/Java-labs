@@ -6,9 +6,9 @@ import java.io.FileInputStream;
 
 public class Main {
     public static void main(String[] args) {
-        XMLInputFactory factory = XMLInputFactory.newInstance();
         try{
-            XMLStreamReader reader = factory.createXMLStreamReader(new FileInputStream("people.xml"));
+            Parser parser = new Parser("people.xml");
+            parser.parse();
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
