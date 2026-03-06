@@ -80,6 +80,7 @@ public class Parser {
                     if (id != null) {
                         if (!personData.containsKey(id)) {
                             personData.put(id, new PersonInformation(id));
+                            cnt++;
                         }
                         if (nameConstruct[2] != null) {
                             String[] temp = nameConstruct[2].trim().split("\\s+", 2);
@@ -377,7 +378,9 @@ public class Parser {
                 System.out.println(entry.getValue().brothers.size() + "brothers");
                 System.out.println(entry.getValue().sisters.size() + "sisters");
                 System.out.println(entry.getValue().personIdName.id+ " "+entry.getValue().personIdName.name);
-
+                System.out.println(entry.getValue().siblingsCheck + "to check siblings");
+                System.out.println(entry.getValue().brothers + " brothers");
+                System.out.println(entry.getValue().sisters + " sisters");
             }
             if (entry.getValue().childrenNumber != (entry.getValue().daughters.size() + entry.getValue().sons.size())) {
                 System.out.println("CHILDREN NUMBER WRONG");
