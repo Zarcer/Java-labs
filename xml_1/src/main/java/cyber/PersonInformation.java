@@ -1,9 +1,7 @@
 package cyber;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class PersonInformation {
     IdName personIdName = new IdName();
@@ -17,10 +15,12 @@ public class PersonInformation {
     IdName husbandIdName = new IdName("NONE");
     IdName spouceCheck = new IdName("NONE");
     int siblingsNumber=0;
+    boolean hasSiblingsNumber=false;
     HashSet<IdName> brothers = new HashSet<>();
     HashSet<IdName> sisters = new HashSet<>();
     HashSet<IdName> siblingsCheck = new HashSet<>();
     int childrenNumber=0;
+    boolean hasChildrenNumber=false;
     HashSet<IdName> daughters = new HashSet<>();
     HashSet<IdName> sons = new HashSet<>();
     HashSet<IdName> childrenCheck = new HashSet<>();
@@ -63,12 +63,27 @@ class IdName{
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         IdName idName = (IdName) object;
-        return Objects.equals(id, idName.id) && Objects.equals(name, idName.name);
+        if (id != null && idName.id != null) {
+            return Objects.equals(id, idName.id);
+        }
+        String thisName = normalizeForCompare(name);
+        String otherName = normalizeForCompare(idName.name);
+        return Objects.equals(thisName, otherName);
     }
 
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name);
+        if (id != null) {
+            return Objects.hash(id);
+        }
+        return Objects.hash(normalizeForCompare(name));
+    }
+
+    private String normalizeForCompare(String source) {
+        if (source == null) {
+            return null;
+        }
+        return source.trim().replaceAll("\\s+", " ").toLowerCase();
     }
 }
